@@ -21,7 +21,7 @@ dependencies:
   flutter_easyloading: ^3.0.5
   shared_preferences: ^2.2.0
   intl: ^0.19.0
-  
+  flutter_native_timezone: ^2.0.0  # REPLACE flutter_timezone
   get_it: ^7.6.0
 
 dev_dependencies:
