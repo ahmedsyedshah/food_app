@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:food_delivery/main.dart';
@@ -73,15 +73,30 @@ class Globs {
 }
 
 class SVKey {
-  static const mainUrl = "http://192.168.1.2:3001";
+  // For local development - use your computer's IP for physical device testing
+  static const mainUrl = "https://food-delivery-backend-production-81b6.up.railway.app/";
+  // For physical device testing, use your computer's IP instead of localhost:
+  // static const mainUrl = "http://192.168.1.2:3001"; // ← Replace with your actual IP
+  
   static const baseUrl = '$mainUrl/api/';
   static const nodeUrl = mainUrl;
 
-  static const svLogin = '${baseUrl}login';
-  static const svSignUp = '${baseUrl}sign_up';
-  static const svForgotPasswordRequest = '${baseUrl}forgot_password_request';
-  static const svForgotPasswordVerify = '${baseUrl}forgot_password_verify';
-  static const svForgotPasswordSetNew = '${baseUrl}forgot_password_set_new';
+  // Updated auth endpoints to match new backend structure
+  static const svLogin = '${baseUrl}auth/login';
+  static const svSignUp = '${baseUrl}auth/sign_up';
+  static const svForgotPasswordRequest = '${baseUrl}auth/forgot_password_request';
+  static const svForgotPasswordVerify = '${baseUrl}auth/forgot_password_verify';
+  static const svForgotPasswordSetNew = '${baseUrl}auth/forgot_password_set_new';
+  
+  // New endpoints for your backend
+  static const svProfile = '${baseUrl}auth/profile';
+  static const svVerify = '${baseUrl}auth/verify';
+  static const svRestaurants = '${baseUrl}restaurants';
+  static const svPopularRestaurants = '${baseUrl}restaurants/popular';
+  static const svRestaurantsByCategory = '${baseUrl}restaurants/category/';
+  
+  // Health check endpoint
+  static const svHealth = '${baseUrl}health';
 }
 
 class KKey {
@@ -95,20 +110,18 @@ class KKey {
   static const address = "address";
   static const userId = "user_id";
   static const resetCode = "reset_code";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
-  // static const  = "";
+  
+  // Additional keys for restaurant data
+  static const image = "image";
+  static const rate = "rate";
+  static const rating = "rating";
+  static const type = "type";
+  static const foodType = "food_type";
+  static const category = "category";
+  
+  // New keys for backend responses
+  static const id = "_id";
+  static const timestamp = "timestamp";
 }
 
 class MSG {
@@ -124,4 +137,9 @@ class MSG {
       "Please enter password not match.";
   static const success = "success";
   static const fail = "fail";
+  
+  // New messages
+  static const connectionError = "Connection error. Please check your internet connection.";
+  static const serverError = "Server error. Please try again later.";
+  static const unknownError = "An unknown error occurred.";
 }

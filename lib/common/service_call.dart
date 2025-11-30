@@ -51,6 +51,4 @@ class ServiceCall {
     userPayload = {};
     navigationService.navigateTo("welcome");
   }
-
-
 }
