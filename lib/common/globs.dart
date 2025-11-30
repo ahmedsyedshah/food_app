@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_timezone/flutter_timezone.dart';
+
 import 'package:food_delivery/main.dart';
 
 class Globs {
@@ -70,13 +70,6 @@ class Globs {
     prefs?.remove(key);
   }
 
-  static Future<String> timeZone() async {
-    try {
-      return await FlutterTimezone.getLocalTimezone();
-    } on PlatformException {
-        return "";
-    }
-  }
 }
 
 class SVKey {
