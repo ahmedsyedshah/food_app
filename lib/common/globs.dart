@@ -74,7 +74,7 @@ class Globs {
 
 class SVKey {
   // For local development - use your computer's IP for physical device testing
-  static const mainUrl = "https://food-delivery-backend-production-81b6.up.railway.app/";
+  static const mainUrl = "https://food-delivery-backend-production-81b6.up.railway.app";
   // For physical device testing, use your computer's IP instead of localhost:
   // static const mainUrl = "http://192.168.1.2:3001"; // ← Replace with your actual IP
   
