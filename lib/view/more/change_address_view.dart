@@ -86,10 +86,9 @@ class _ChangeAddressViewState extends State<ChangeAddressView> {
             mapType: MapType.normal,
             initialCameraPosition: _kLake,
             compassEnabled: false,
-            gestureRecognizers: <dynamic>{}
-              ..add(Factory<PanGestureRecognizer>(
-                () => PanGestureRecognizer(),
-              )),
+            gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
+              Factory<PanGestureRecognizer>(() => PanGestureRecognizer()),
+            },
             markers: markers,
             onMapCreated: (GoogleMapController controller) {
               _controller = controller;
